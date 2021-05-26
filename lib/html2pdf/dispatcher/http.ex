@@ -100,7 +100,6 @@ defmodule HTML2PDF.Dispatcher.HTTP do
   end
 
   defp service_url do
-    # Application.fetch_env!(:html2pdf, __MODULE__)[:url]
-    "http://localhost:3001/process"
+    Application.fetch_env!(:html2pdf, __MODULE__)[:url]
   end
 end

@@ -23,7 +23,7 @@ defmodule HTML2PDF.Dispatcher.HTTP do
           %HTTPoison.AsyncStatus{code: 200, id: ^id} -> {:ok, get_result(id)}
           %HTTPoison.AsyncStatus{code: _, id: ^id} -> :error
         after
-          5000 -> :error
+          @timeout -> :error
         end
 
       {_, details} ->

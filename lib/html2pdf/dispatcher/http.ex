@@ -90,7 +90,7 @@ defmodule HTML2PDF.Dispatcher.HTTP do
     |> Enum.reduce(%{}, fn {key, value}, acc ->
       case @params_mapping[key] do
         nil ->
-          Logger.warn("Unsupported key #{inspect(key)}")
+          Logger.warning("Unsupported key #{inspect(key)}")
           acc
 
         new_key ->
